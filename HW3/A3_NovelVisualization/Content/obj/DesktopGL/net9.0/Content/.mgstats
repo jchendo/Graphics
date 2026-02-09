@@ -1,1 +1,4 @@
 Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Size,Build Seconds
+"C:/Users/caden/OneDrive/Documents/GitHub/Graphics/HW3/A3_NovelVisualization/Content/Fonts/Font.spritefont","C:/Users/caden/OneDrive/Documents/GitHub/Graphics/HW3/A3_NovelVisualization/Content/bin/DesktopGL/Content/Fonts/Font.xnb","FontDescriptionProcessor","SpriteFontContent",2254,37914,0.2015594
+"C:/Users/caden/OneDrive/Documents/GitHub/Graphics/HW3/A3_NovelVisualization/Content/Text/uniquewords.txt","C:\Users\caden\OneDrive\Documents\GitHub\Graphics\HW3\A3_NovelVisualization\Content\bin\DesktopGL\Content\Text/uniquewords.txt","CopyItem","File",38802,38802,0.0032338
+"C:/Users/caden/OneDrive/Documents/GitHub/Graphics/HW3/A3_NovelVisualization/Content/Text/wordfrequency.txt","C:\Users\caden\OneDrive\Documents\GitHub\Graphics\HW3\A3_NovelVisualization\Content\bin\DesktopGL\Content\Text/wordfrequency.txt","CopyItem","File",1446,1446,0.0015482

@@ -11,17 +11,27 @@ public class Game1 : Game
 {
     private GraphicsDeviceManager _graphics;
     private SpriteBatch _spriteBatch;
+
+    private Random _rand;
     
     private List <(int, int)> _frequencies;
+    
+    private SpriteFont _font;
 
     private string words;
+    private String[] _uniqueWords;
     
     private Texture2D _barTexture;
+
+    private Color[] _wordColors;
     
     private KeyboardState _keyboardState;
     private KeyboardState _previousKeyboardState;
+    private MouseState _mouseState;
+    private MouseState _previousMouseState;
     
     private bool _switch;
+    private bool _pressed;
     
     public Game1()
     {
@@ -37,6 +47,7 @@ public class Game1 : Game
         _frequencies = new List <(int, int)>();
         _previousKeyboardState = Keyboard.GetState();
         _switch = false;
+        _switch = false;
 
         base.Initialize();
     }
@@ -50,9 +61,15 @@ public class Game1 : Game
         _graphics.PreferredBackBufferHeight = 600;
         _graphics.ApplyChanges();
         
-        _barTexture.SetData(new[] { Color.White });
+        _font =  Content.Load<SpriteFont>("Fonts/Font");
         
+        _barTexture.SetData(new[] { Color.White });
+        _wordColors = new Color[]{Color.Red, Color.Blue, Color.Green};
+
+        _rand = new Random();
+
         LoadWordFrequencies();
+        LoadUniqueWords();
     }
 
     protected override void Update(GameTime gameTime)
@@ -63,20 +80,27 @@ public class Game1 : Game
 
         // TODO: Add your update logic here
         _keyboardState = Keyboard.GetState();
+        _mouseState = Mouse.GetState();
 
         if (_keyboardState.IsKeyDown(Keys.Enter) && _previousKeyboardState.IsKeyUp(Keys.Enter))
         {
             _switch = !_switch;
         }
+
+        if (_mouseState.LeftButton == ButtonState.Pressed && _previousMouseState.LeftButton == ButtonState.Released)
+        {
+            _pressed = true;
+        }
         
         _previousKeyboardState = _keyboardState;
+        _previousMouseState = _mouseState;
 
         base.Update(gameTime);
     }
 
     private void LoadWordFrequencies()
     {
-        string path = "wordfrequency.txt";
+        string path = "Content/Text/wordfrequency.txt";
 
         using (var stream = TitleContainer.OpenStream(path))
         using (var reader = new StreamReader(stream))
@@ -129,21 +153,72 @@ public class Game1 : Game
 
     }
 
+    public void LoadUniqueWords()
+    {
+        String path = "Content/Text/uniquewords.txt";
+        String text = "";
+        
+        using (var stream = TitleContainer.OpenStream(path))
+        using (var reader = new StreamReader(stream))
+        {
+            text = File.ReadAllText(path);
+            _uniqueWords = text.Split("\n");
+        }
+    }
+    
+    private void DisplayUniqueWords()
+    {
+        bool outOfBoundsX = false;
+        bool outOfBoundsY = false;
+        int y_val = 0;
+        int y_inc = 30;
+
+        while (!outOfBoundsY)
+        {
+            String displayString = "";
+            outOfBoundsX = false;
+            while (!outOfBoundsX)
+            {
+                String newWord = _uniqueWords[_rand.Next(0,_uniqueWords.Length)];
+                if (_font.MeasureString(displayString + newWord).X > _graphics.PreferredBackBufferWidth)
+                {
+                    outOfBoundsX = true;
+                }
+                else
+                {
+                    _spriteBatch.DrawString(_font, newWord + " ", new Vector2(_font.MeasureString(displayString).X, y_val), _wordColors[_rand.Next(_wordColors.Length)]);
+                }
+                displayString = displayString + newWord + " ";
+            }
+
+            if (y_val + y_inc > _graphics.PreferredBackBufferHeight)
+            {
+                outOfBoundsY = true;
+            }
+            else
+            {
+                y_val += y_inc;
+            }
+        }
+
+        _pressed = false;
+    }
+
     protected override void Draw(GameTime gameTime)
     {
-        GraphicsDevice.Clear(Color.NavajoWhite);
-
         // TODO: Add your drawing code here
 
         base.Draw(gameTime);
         _spriteBatch.Begin();
         if (_switch == true)
         {
-            GraphicsDevice.Clear(Color.Red);
-        }
-        else
-        {
+            GraphicsDevice.Clear(Color.NavajoWhite);
             DisplayWordFrequency();
+        }
+        if(_switch == false && _pressed == true)
+        {
+            GraphicsDevice.Clear(Color.NavajoWhite);
+            DisplayUniqueWords();
         }
         _spriteBatch.End();
     }

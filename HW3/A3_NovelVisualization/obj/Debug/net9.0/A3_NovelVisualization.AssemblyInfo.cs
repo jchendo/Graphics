@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("A3_NovelVisualization")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+acc016127dded3e2d63ec8c4a029a8b270f54089")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3b7c0b1b57e247348993cad55aaa33e9ce8256f5")]
 [assembly: System.Reflection.AssemblyProductAttribute("A3_NovelVisualization")]
 [assembly: System.Reflection.AssemblyTitleAttribute("A3_NovelVisualization")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
