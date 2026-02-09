@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\caden\\OneDrive\\Documents\\GitHub\\Graphics\\HW3\\A3_NovelVisualization\\A3_NovelVisualization.csproj": {}
+    "C:\\Users\\sahir\\school\\Graphics\\Graphics\\HW3\\A3_NovelVisualization\\A3_NovelVisualization.csproj": {}
   },
   "projects": {
-    "C:\\Users\\caden\\OneDrive\\Documents\\GitHub\\Graphics\\HW3\\A3_NovelVisualization\\A3_NovelVisualization.csproj": {
+    "C:\\Users\\sahir\\school\\Graphics\\Graphics\\HW3\\A3_NovelVisualization\\A3_NovelVisualization.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\caden\\OneDrive\\Documents\\GitHub\\Graphics\\HW3\\A3_NovelVisualization\\A3_NovelVisualization.csproj",
+        "projectUniqueName": "C:\\Users\\sahir\\school\\Graphics\\Graphics\\HW3\\A3_NovelVisualization\\A3_NovelVisualization.csproj",
         "projectName": "A3_NovelVisualization",
-        "projectPath": "C:\\Users\\caden\\OneDrive\\Documents\\GitHub\\Graphics\\HW3\\A3_NovelVisualization\\A3_NovelVisualization.csproj",
-        "packagesPath": "C:\\Users\\caden\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\caden\\OneDrive\\Documents\\GitHub\\Graphics\\HW3\\A3_NovelVisualization\\obj\\",
+        "projectPath": "C:\\Users\\sahir\\school\\Graphics\\Graphics\\HW3\\A3_NovelVisualization\\A3_NovelVisualization.csproj",
+        "packagesPath": "C:\\Users\\sahir\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\sahir\\school\\Graphics\\Graphics\\HW3\\A3_NovelVisualization\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\caden\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\sahir\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net9.0"
@@ -67,19 +67,19 @@
           "downloadDependencies": [
             {
               "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[9.0.12, 9.0.12]"
+              "version": "[9.0.11, 9.0.11]"
             },
             {
               "name": "Microsoft.NETCore.App.Host.win-x64",
-              "version": "[9.0.12, 9.0.12]"
+              "version": "[9.0.11, 9.0.11]"
             },
             {
               "name": "Microsoft.NETCore.App.Ref",
-              "version": "[9.0.12, 9.0.12]"
+              "version": "[9.0.11, 9.0.11]"
             },
             {
               "name": "Microsoft.WindowsDesktop.App.Ref",
-              "version": "[9.0.12, 9.0.12]"
+              "version": "[9.0.11, 9.0.11]"
             }
           ],
           "frameworkReferences": {
@@ -87,7 +87,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.102/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.101/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
